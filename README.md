@@ -24,3 +24,7 @@ This repository contains the Flask application for an AI-driven data analysis to
 ```bash
 git clone https://github.com/your-username/your-repository-name.git
 cd your-repository-name
+
+pip install -r requirements.txt
+
+flask run
