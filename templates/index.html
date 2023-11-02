@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Drag and Drop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+<div class="upload-container">
+    <!-- Draggable File Representations -->
+    <div class="file-rep" draggable="true" id="file1">File 1</div>
+    <div class="file-rep" draggable="true" id="file2">File 2</div>
+
+    <!-- Drag and Drop Area -->
+    <div class="drop-zone" id="drop-zone-1">
+        Drop file 1 here
+    </div>
+    <div class="drop-zone" id="drop-zone-2">
+        Drop file 2 here
+    </div>
+
+    <!-- Industry Selection -->
+    <div class="industry-selection">
+        <select id="industry-select">
+            <option value="">Select Industry</option>
+            <option value="healthcare">Healthcare</option>
+            <option value="finance">Finance</option>
+            <option value="sports">Sports</option>
+        </select>
+        <button id="generate-btn">Generate Random Data</button>
+    </div>
+</div>
+
+<!-- Plotly Chart -->
+<div id="plot"></div>
+
+<div id="shap-plot-container">
+    <h3>Model Interpretation (SHAP Values)</h3>
+    <div id="shap-plot"></div>
+</div>
+
+<!-- Analysis Results -->
+<div id="analysis-results"></div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

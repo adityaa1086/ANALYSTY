@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.upload-container {
+    width: 90%;
+    max-width: 600px; /* Maximum width of the container */
+    margin-top: 20px;
+}
+
+.upload-area {
+    border: 2px dashed #000;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+.file-rep { /* Represents the draggable file elements */
+    width: 100px;
+    height: 100px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    line-height: 80px;
+    cursor: grab;
+    user-select: none;
+}
+
+.file-rep:hover {
+    background-color: #e0e0e0;
+}
+
+.drop-zone {
+    border: 2px dashed #000;
+    min-height: 150px;
+    width: calc(100% - 40px);
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #fafafa;
+}
+
+.drop-zone.drag-over {
+    background-color: #dcdcdc;
+}
+
+/* Add transitions for smooth background color changes */
+.file-rep, .drop-zone {
+    transition: background-color 0.3s;
+}
+
+#plot {
+    width: 90%;
+    max-width: 800px; /* Maximum width of the plot area */
+    height: auto;
+    margin: 20px 0;
+}
+
+.industry-selection {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.industry-select {
+    padding: 10px;
+    border: 1px solid #000;
+    font-size: 16px;
+    flex-grow: 1; /* Allows the select to grow and fill the space */
+    margin-right: 10px; /* Spacing between select and button */
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 768px) {
+    .industry-selection {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .industry-select {
+        margin-bottom: 10px;
+        margin-right: 0;
+    }
+
+    button {
+        width: 100%; /* Full width on smaller screens */
+    }
+}
+
+/* Additional responsiveness for very small devices */
+@media (max-width: 480px) {
+    .upload-container,
+    #plot {
+        width: 95%;
+    }
+}
+
+.file-drag.drop-active {
+    background: linear-gradient(135deg, #6e45e2 0%, #88d3ce 100%);
+}
